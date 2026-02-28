@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.Rendering;
 
 public class Script : MonoBehaviour
 
@@ -9,12 +8,13 @@ public class Script : MonoBehaviour
     [SerializeField] private TMP_Text _saludo;
     [SerializeField] private Rigidbody2D _pelotica;
     [SerializeField] private float _minForce = 10f;
-    [SerializeField] private float _maxForce = 5000f;
+    [SerializeField] private float _maxForce = 50f;
+    [SerializeField] private float _randomMagnitude;
     [SerializeField] private string _nombre = "Salomón";
     [SerializeField] private int _edad = 18;
     [SerializeField] private int _añoActual = 2026;
     [SerializeField] private int _añoNacimiento;
-    [SerializeField] private float _randomMagnitude;
+
 
     //Start
 
