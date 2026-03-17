@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
     //declarar variables
     [SerializeField] private float _vidajugador = 100;
+    [SerializeField] private float _coinAmount = 0;
+
     [SerializeField] private PlayerController playerController;
     [SerializeField] private UIManager uiManager;
 
@@ -14,11 +16,11 @@ public class GameManager : MonoBehaviour
             _vidajugador += cura;
             ActualizarBarraDeVida();
         }
-        
+
         else
         {
             _vidajugador = 100;
-            
+
         }
     }
     public void RestarVida(int daño)
@@ -33,7 +35,7 @@ public class GameManager : MonoBehaviour
             Destroy(playerController.gameObject);
         }
     }
-    
+
     public void ActualizarBarraDeVida()
     {
         uiManager.FillAmountBarraDeVida(_vidajugador / 100);
@@ -50,5 +52,9 @@ public class GameManager : MonoBehaviour
             uiManager.ColorBarraDeVida(Color.red);
         }
     }
-
+    public void AddCoin(int coin)
+    {
+        _coinAmount += coin;
+        uiManager.UpdateCoinText(coin);
+    }
 }
